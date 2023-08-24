@@ -26,8 +26,7 @@ public class LoginTest extends BaseTest{
 	@Test(priority=2)
 	public void invalidLoginTest() {
 		MenuPage menu = new MenuPage(driver);
-		menu.navigateTo(menu.loginLink);
-		
+		menu.navigateTo(menu.loginLink);		
 		LoginPage login = new LoginPage(driver);
 		login.loginInApp("TestUserGresit", "12345@67890");
 		assertTrue(login.checkLoginMessageIsDisplayed(login.errorLoginPopup));
