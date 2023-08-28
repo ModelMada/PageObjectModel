@@ -1,10 +1,14 @@
 package tests;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import curs17.WebElementExample;
 import utils.BaseTest;
 
 public class XpathExample extends BaseTest{
@@ -57,6 +61,29 @@ public class XpathExample extends BaseTest{
 		//WebElement  : <a href="https://keybooks.ro/account/orders/">recent orders</a>
 		//Xpath for getText --> //a[contains(text(), 'orde')]
 		driver.findElement(By.xpath("//a[contains(text(), 'orde')]")).click();
-	}
+		
+		//---> //th[contains(@class,'woocommerce-orders-table')]/span[contains(text(),'Order')]
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		WebElement orderTableHeader = driver.findElement(By.xpath("//th[contains(@class,'woocommerce-orders-table')]/span[contains(text(),'Order')]"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background: beige;border:4px solid blue')", orderTableHeader);
+		
+		//-> index (//th[contains(@class, 'woocommerce-orders-table__header')]/span)[4]
+		WebElement totalTableHeader = driver.findElement(By.xpath("(//th[contains(@class, 'woocommerce-orders-table__header')]/span)[4]"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background: beige;border:4px solid pink')", totalTableHeader);
+		
+		//--> //td[contains(@class,'woocommerce-orders-table__cell')][@data-title='Order']/a[contains(text(),'1720')]
+		WebElement firstOrder = driver.findElement(By.xpath("//td[contains(@class,'woocommerce-orders-table__cell')][@data-title='Order']/a[contains(text(),'1720')]"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background: beige;border:4px solid pink')", firstOrder);
+		
+		// --> //td[contains(@class, 'woocommerce-orders-table__cell' )][@data-title='Order']/a[not(contains(text(), '1720'))]
+		// vrem sa coloram doar 2 elem specifice di lista, not 1720
+		//not
+		List<WebElement> orders = driver.findElements(By.xpath("//td[contains(@class, 'woocommerce-orders-table__cell' )][@data-title='Order']/a[not(contains(text(), '1720'))]"));
+		for(WebElement element : orders) {
+			jse.executeScript("arguments[0].setAttribute('style', 'background: yellow;border:4px solid red')", element);
+		}
+	
+	
 
+	}
 }
