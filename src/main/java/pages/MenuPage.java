@@ -1,7 +1,8 @@
 package pages;
-
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 //clasa ce va fi instantiata, facem obiect al clasei si il instantiem
 
@@ -19,10 +20,19 @@ public class MenuPage {
 	public By contactLink = By.linkText("CONTACTS");
 	public By loginLink = By.linkText("Login");
 	public By shopLink = By.linkText("BOOKS");	
+	public By aboutLink = By.linkText("ABOUT");
+	public By blogLink = By.linkText("BLOG");
 	//metode specifice cu locatori sau elementele declarate
 	//metode specifice inseamna functionalitate a paginii in care ma aflu
 	
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();
+	}
+	
+	public void hoverElement(By locator) {
+		WebElement element = driver.findElement(locator);
+		Actions action = new Actions(driver); //driver este instanta de clasa
+		action.moveToElement(element).perform();
+		
 	}
 }
