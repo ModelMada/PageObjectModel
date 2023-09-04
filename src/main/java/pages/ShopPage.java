@@ -18,6 +18,7 @@ public WebDriver driver;
 	public By orderDropDown = By.name("orderby");
 	public By priceSliderInitialPosition = By.xpath("//span[@style='left: 0%;']");
 	public By priceSliderFinalPosition = By.xpath("//span[@style='left: 100%;']");
+	public By priceSliderFinalMoved = By.xpath("//span[@style='left: 62.5%;']");
 	
 	
 	//metode
@@ -26,6 +27,14 @@ public WebDriver driver;
 		WebElement element = driver.findElement(locator);
 		Actions action = new Actions(driver);
 		action.moveToElement(element).clickAndHold(element).moveByOffset(x,y).release().perform();
+		
+	}
+	
+	public void dragAndDropElement(By locator1,By locator2) {
+		WebElement element1 = driver.findElement(locator1);
+		WebElement element2 = driver.findElement(locator2);
+		Actions  action = new Actions(driver);
+		action.dragAndDrop(element1, element2).perform();
 	}
 	
 	

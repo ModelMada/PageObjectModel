@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
 
-	
+	public BasePage app;
 	public WebDriver driver;		//vreau sa fie accesibil obiectul , este null, reprezinta browseru nostru
 	
 	@BeforeClass
@@ -23,7 +23,8 @@ public class BaseTest {
 		driver.get("https://keybooks.ro/");
 		//driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
-
+		
+		app = new BasePage();
 
 	}
 	
