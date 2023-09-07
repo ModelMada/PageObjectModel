@@ -22,6 +22,7 @@ public class MenuPage {
 	public By shopLink = By.linkText("BOOKS");	
 	public By aboutLink = By.linkText("ABOUT");
 	public By blogLink = By.linkText("BLOG");
+	public By eventsLink = By.linkText("EVENTS");
 	//metode specifice cu locatori sau elementele declarate
 	//metode specifice inseamna functionalitate a paginii in care ma aflu
 	

@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeClass;
 public class BaseTest {
 
 	public BasePage app;
-	public WebDriver driver;		//vreau sa fie accesibil obiectul , este null, reprezinta browseru nostru
+	public static WebDriver driver;		//obiectul va fi instantiat inainte de instantierea claselor, va avea aceeasi valoarea in toate clasele//vreau sa fie accesibil obiectul , este null, reprezinta browseru nostru
 	
 	@BeforeClass
 	public void setup() {
