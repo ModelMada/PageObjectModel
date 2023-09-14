@@ -31,6 +31,7 @@ public class BaseTest {
 	@AfterClass
 	public void tearDown() throws InterruptedException {
 		Thread.sleep(4000);			//ca sa se inchida browseru dupa 4 secunde -- este bad practice
-		driver.close();
+		driver.close();	//inchide tabul curent
+		driver.quit();//inchide browserul indiferent de cate tab uri are deschise
 	}
 }

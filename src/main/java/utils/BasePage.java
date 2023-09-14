@@ -1,5 +1,5 @@
 package utils;
-import pages.ContactsPage;
+import pages.*;
 import pages.EventsPage;
 import pages.LoginPage;
 import pages.MenuPage;
@@ -12,5 +12,6 @@ public class BasePage extends SeleniumWrappers {
 	public ShopPage shop = new ShopPage(driver);
 	public ContactsPage contact = new ContactsPage(driver);
 	public EventsPage events = new EventsPage(driver);
+	public SingleEventPage singleEvent = new SingleEventPage(driver);
 	
 }
