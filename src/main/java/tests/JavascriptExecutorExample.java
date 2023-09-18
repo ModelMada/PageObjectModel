@@ -40,10 +40,21 @@ public class JavascriptExecutorExample extends BaseTest {
 	public void example2() {
 		
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		//alternativa pt click()
 		WebElement searchIcon = driver.findElement(app.menu.searchIcon);
 		jse.executeScript("arguments[0].click()", searchIcon);
 		
 		WebElement searchInput = driver.findElement(app.menu.searchInput);
+		//alternativa pentru sendKeys()
 		jse.executeScript("arguments[0].value='cooking'", searchInput);
+		jse.executeScript("arguments[0].click()", searchIcon);
+		
+		
+		//tot algoritmul putea sa fie in urm 3 linii, nu mai declaram web elementele, folosim metoda din seleniumWrappers pt a returna elementele7
+		/*
+		jse.executeScript("arguments[0].click()",app.returnElement(app.menu.searchIcon));
+		jse.executeScript("arguments[0].value='cooking'",app.returnElement(app.menu.searchInput));
+		jse.executeScript("arguments[0].click()",app.returnElement(app.menu.searchIcon));
+		*/
 	}
 }
