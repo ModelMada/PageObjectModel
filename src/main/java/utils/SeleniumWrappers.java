@@ -8,6 +8,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+//aici scriem metodele care sunt generice pentru mai multe clase
+//le putem reutiliza si pt alte elemente
+
 public class SeleniumWrappers extends BaseTest {
 
 	public void click(By locator) {
@@ -38,4 +41,10 @@ public class SeleniumWrappers extends BaseTest {
 		driver.findElement(locator).sendKeys(text);
 	
 	}
+	
+	public String getElementText(By locator) {
+		return driver.findElement(locator).getText();
+	}
+	
+	
 }

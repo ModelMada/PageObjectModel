@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
 
-	public BasePage app;
+	public BasePage app; //app poate sa cheme toate metodele din Base Page
 	public static WebDriver driver;		//obiectul va fi instantiat inainte de instantierea claselor, va avea aceeasi valoarea in toate clasele//vreau sa fie accesibil obiectul , este null, reprezinta browseru nostru
 	
 	@BeforeClass
@@ -22,10 +22,8 @@ public class BaseTest {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));	//setupul se propaga pe toata rularea, orice findElem va activa implicit wait. se pune in base test ca best practice, nu are sens sa il folosim in test
 		driver.get("https://keybooks.ro/");
 		//driver.get("https://the-internet.herokuapp.com/javascript_alerts");
-		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
-		
-		app = new BasePage();
-
+		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");		
+		app = new BasePage(); //creez obiectele inainte,
 	}
 	
 	@AfterClass

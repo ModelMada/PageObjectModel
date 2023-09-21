@@ -23,6 +23,7 @@ public class MenuPage {
 	public By aboutLink = By.linkText("ABOUT");
 	public By blogLink = By.linkText("BLOG");
 	public By eventsLink = By.linkText("EVENTS");
+	public By singleAuthorLink = By.linkText("SINGLE AUTHOR");
 	
 	public By searchIcon = By.cssSelector("button[class*='search_submit']");
 	public By searchInput = By.cssSelector("input[class='search_field']");
