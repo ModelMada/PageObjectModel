@@ -46,5 +46,15 @@ public class SeleniumWrappers extends BaseTest {
 		return driver.findElement(locator).getText();
 	}
 	
+	public void scrollVertically(int y) {
+		Actions action = new Actions(driver);
+		action.scrollByAmount(0, y).perform();	
+	}
+	
+	public void scrollHorizontally(int x) {
+		Actions action = new Actions(driver);
+		action.scrollByAmount(x, 0).perform();	
+	}
+	
 	
 }

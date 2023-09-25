@@ -15,5 +15,6 @@ public class BasePage extends SeleniumWrappers {
 	public SingleEventPage singleEvent = new SingleEventPage(driver);
 	public SingleAuthor author = new SingleAuthor(driver);
 	public ShippingPage shippingpage = new ShippingPage(driver);
+	public HomePage homePage = new HomePage(driver);
 	
 }
