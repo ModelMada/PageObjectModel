@@ -16,5 +16,7 @@ public class BasePage extends SeleniumWrappers {
 	public SingleAuthor author = new SingleAuthor(driver);
 	public ShippingPage shippingpage = new ShippingPage(driver);
 	public HomePage homePage = new HomePage(driver);
+	public StormBookPage stormBook = new StormBookPage(driver);
+	public BlogPage blogPage = new BlogPage(driver);
 	
 }

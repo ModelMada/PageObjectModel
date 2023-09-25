@@ -56,5 +56,16 @@ public class SeleniumWrappers extends BaseTest {
 		action.scrollByAmount(x, 0).perform();	
 	}
 	
+	public boolean verifyIfDisplayed(By locator) {
+		return driver.findElement(locator).isDisplayed();
+	}
+	
+	public void dragAndDropSlider(By locator, int x, int y) {
+		WebElement element = driver.findElement(locator);
+		Actions action = new Actions(driver);
+		action.moveToElement(element).clickAndHold(element).moveByOffset(x,y).release().perform();
+		
+	}
+	
 	
 }

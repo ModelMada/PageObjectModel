@@ -15,4 +15,5 @@ public class HomePage extends SeleniumWrappers {
 	
 	public By signUpButton = By.xpath("//input[@value='Sign up']");
 	public By pickedText = By.xpath("//h4=[@em='Picked']");
+	public By chosenBook = By.xpath("//h3//a[contains(@href,'storm')][1]");
 }
