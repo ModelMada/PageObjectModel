@@ -20,6 +20,10 @@ public WebDriver driver;
 	public By priceSliderFinalPosition = By.xpath("//span[@style='left: 100%;']");
 	public By priceSliderFinalMoved = By.xpath("//span[@style='left: 62.5%;']");
 	
+	public By cookbooksCategory = By.xpath("//a[contains(text(),'Cookbooks')]");
+	public By firstBook = By.xpath("//div[@class='post_thumb']//a[contains(@href,'a-hundred')][2]");
+	public By cookingWithLoveBook = By.xpath("//div[@class='post_thumb']//a[contains(@href,'cooking')][2]");
+	
 	
 	//metode
 	
