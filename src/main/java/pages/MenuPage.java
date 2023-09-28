@@ -1,12 +1,15 @@
 package pages;
 import org.openqa.selenium.interactions.Actions;
+
+import utils.SeleniumWrappers;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 //clasa ce va fi instantiata, facem obiect al clasei si il instantiem
 
-public class MenuPage {
+public class MenuPage extends SeleniumWrappers {
 	
 	public WebDriver driver;
 	
@@ -38,7 +41,13 @@ public class MenuPage {
 	public void hoverElement(By locator) {
 		WebElement element = driver.findElement(locator);
 		Actions action = new Actions(driver); //driver este instanta de clasa
-		action.moveToElement(element).perform();
-		
+		action.moveToElement(element).perform();		
+	}
+	
+	//pt metoda de mai jos extindem selenium wrappers ca sa putem accesa metodele de click si send Keys de acolo
+	public void search(String textToSearch) {
+		click(searchIcon);
+		sendKeys(searchInput, textToSearch);
+		click(searchIcon);		
 	}
 }

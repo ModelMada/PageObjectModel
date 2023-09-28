@@ -17,9 +17,12 @@ public class LoginPage {
 	public By errorLoginPopup =By.cssSelector("div[class*='sc_infobox_style_error']");
 	public By sucessLoginPopup =By.cssSelector("div[class*='sc_infobox_style_success']");
 	public By logoutButton = By.linkText("Logout");
+	public By closeButton = By.cssSelector("a[class='popup_close']");
 	//metode specifice
 	public void loginInApp(String username, String pass) {
+		driver.findElement(usernameField).clear();
 		driver.findElement(usernameField).sendKeys(username);
+		driver.findElement(passwordField).clear();
 		driver.findElement(passwordField).sendKeys(pass);
 		driver.findElement(submitButton).click();
 	}
