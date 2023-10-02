@@ -13,7 +13,7 @@ import utils.BaseTest;
 
 public class DropdownTest extends BaseTest {
 
-	@Test(priority=1)
+	@Test(priority=1, groups = "ProductFunctionality")
 	public void selectByValueTest() throws InterruptedException {
 		
 		MenuPage menu = new MenuPage(driver);
@@ -24,7 +24,7 @@ public class DropdownTest extends BaseTest {
 		assertEquals(shop.getSelectedOption(),"Sort by price: high to low");
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2, groups = "ProductFunctionality")
 	public void selectByVisibleTextTest() {
 		MenuPage menu = new MenuPage(driver);
 		menu.navigateTo(menu.shopLink);
@@ -33,7 +33,7 @@ public class DropdownTest extends BaseTest {
 		assertEquals(shop.getSelectedOption(),"Sort by popularity");
 	}
 	
-	@Test(priority=3)
+	@Test(priority=3, groups = "ProductFunctionality")
 	public void selectByIndexTest() {
 		MenuPage menu = new MenuPage(driver);
 		menu.navigateTo(menu.shopLink);
