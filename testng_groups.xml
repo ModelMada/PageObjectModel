@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" >
+    <test name="123" >
+        <groups>
+			<!-- Grupurile sunt trecute la nivel de clasa de test, langa tagul de priority -->
+			<!-- Pentru a putea rula testele, suntem obligati ca in BaseTest sa punem tagul de alwaysRun true pentru metoda Before/After class, ne asiguram ca aceste metode ruleaza intotdeauna-->
+			<run>
+				<include name="ProductFunctionality"></include>
+				<exclude name="LoginFunctionality"></exclude>
+			</run>
+		</groups>
+		<packages>
+			<package name="tests"></package>
+		</packages>
+    </test>
+</suite>
