@@ -17,20 +17,20 @@ public class BaseTest {
 	public BasePage app; //app poate sa cheme toate metodele din Base Page
 	public static WebDriver driver;		//obiectul va fi instantiat inainte de instantierea claselor, va avea aceeasi valoarea in toate clasele//vreau sa fie accesibil obiectul , este null, reprezinta browseru nostru
 	
-	@Parameters({"appURL"})			//parametrul se va folosi peste tot in metoda unde avem variabila de URL, la metoda adaugam un parametru de tip String url
-	@BeforeMethod (alwaysRun = true)
-	public void setup(String url) {
+	//@Parameters({"appURL"})			//parametrul se va folosi peste tot in metoda unde avem variabila de URL, la metoda adaugam un parametru de tip String url
+	@BeforeClass(alwaysRun = true)
+	public void setup() {
 		
 		driver = new ChromeDriver();		
 		driver.manage().window().maximize();		//face maximize la browser
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));	//setupul se propaga pe toata rularea, orice findElem va activa implicit wait. se pune in base test ca best practice, nu are sens sa il folosim in test
-		driver.get(url);
+		driver.get("https://keybooks.ro/");
 		//driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 		//driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");		
 		app = new BasePage(); //creez obiectele inainte,
 	}
 	
-	@AfterMethod (alwaysRun = true)
+	@AfterClass (alwaysRun = true)
 	public void tearDown() throws InterruptedException {
 		Thread.sleep(4000);			//ca sa se inchida browseru dupa 4 secunde -- este bad practice
 		//driver.close();	//inchide tabul curent

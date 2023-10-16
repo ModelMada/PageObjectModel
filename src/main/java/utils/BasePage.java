@@ -18,5 +18,8 @@ public class BasePage extends SeleniumWrappers {
 	public HomePage homePage = new HomePage(driver);
 	public StormBookPage stormBook = new StormBookPage(driver);
 	public BlogPage blogPage = new BlogPage(driver);
+	public PostFormatPage postFormatPage = new PostFormatPage(driver);
+	public GalleryFormatPage galleryFormat = new GalleryFormatPage(driver);
+	public Curs33ProductPage productPage = new Curs33ProductPage(driver);
 	
 }

@@ -1,10 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Suite1" >
     <test name="123" >
+		<parameter name="appURL" value="https://keybooks.ro/" />
         <classes>
-            <class name="tests.DataProviderLoginTest" ></class>   
-            <class name="tests.DataProviderSearchTest" ></class>
-            <class name="tests.DropdownTest" ></class>          
+            <class name="tests.KingBookTema33" ></class>   
+         <!--    <class name="tests.DataProviderSearchTest" ></class>
+            <class name="tests.DropdownTest" ></class>  -->        
         </classes>
     </test>
 </suite>
